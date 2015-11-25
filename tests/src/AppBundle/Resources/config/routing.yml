@@ -7,3 +7,8 @@ get:
     path: /get/{name}
     defaults: { _controller: index_controller:getAction }
     methods: [GET]
+
+property:
+    path: /property
+    defaults: { _controller: index_controller:propertyAction }
+    methods: [GET]
