@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use \AppBundle\Model\Config;
 use \PommProject\Foundation\Session\Session;
+use \Symfony\Component\Serializer\Serializer;
 use \Symfony\Component\HttpFoundation\Response;
 use \Symfony\Component\Templating\EngineInterface;
 use \Symfony\Component\PropertyInfo\PropertyInfoExtractor;
@@ -13,15 +14,18 @@ class IndexController
     private $pomm;
     private $templating;
     private $property;
+    private $serializer;
 
     public function __construct(
         EngineInterface $templating,
         Session $pomm,
-        PropertyInfoExtractor $property
+        PropertyInfoExtractor $property,
+        Serializer $serializer
     ) {
         $this->pomm = $pomm;
         $this->templating = $templating;
         $this->property = $property;
+        $this->serializer = $serializer;
     }
 
     public function indexAction()
@@ -61,6 +65,19 @@ class IndexController
                 'AppBundle:Front:property.html.twig',
                 compact('info')
             )
+        );
+    }
+
+
+    public function serializeAction()
+    {
+        $results = $this->pomm->getQueryManager()
+            ->query('select point(1,2)');
+
+        return new Response(
+            $this->serializer->serialize($results, 'json'),
+            Response::HTTP_OK,
+            ['Content-Type' => 'application/json']
         );
     }
 }

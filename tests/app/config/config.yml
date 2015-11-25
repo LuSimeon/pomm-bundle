@@ -24,6 +24,8 @@ framework:
     http_method_override: true
     property_info:
         enabled: true
+    serializer:
+        enabled: true
 
 # Twig Configuration
 twig:

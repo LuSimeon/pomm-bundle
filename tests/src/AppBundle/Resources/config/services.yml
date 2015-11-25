@@ -1,4 +1,4 @@
 services:
     index_controller:
         class: AppBundle\Controller\IndexController
-        arguments: ['@templating', '@pomm.default_session', '@property_info']
+        arguments: ['@templating', '@pomm.default_session', '@property_info', '@serializer']
