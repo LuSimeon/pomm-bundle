@@ -4,7 +4,8 @@
 /app/phpunit.xml
 /build/
 /vendor/
-/var/
+/var/*
+!/var/.gitkeep
 /bin/*
 !/bin/console
 /composer.phar
