@@ -6,14 +6,14 @@
         }
     ],
     "require": {
-        "symfony/symfony": "~2.6",
-        "symfony/monolog-bundle": "~2.4",
+        "symfony/symfony": "~3.0",
+        "symfony/monolog-bundle": "~2.8",
         "twig/extensions": "~1.0",
-        "sensio/distribution-bundle": "~3.0.12",
-        "sensio/framework-extra-bundle": "~3.0,>=3.0.2",
+        "sensio/distribution-bundle": "~5.0",
+        "sensio/framework-extra-bundle": "~3.0.2",
         "pomm-project/cli": "~2.0@dev",
         "pomm-project/foundation": "~2.0@dev",
-        "pomm-project/pomm-bundle": "~2.0@dev",
+        "pomm-project/pomm-bundle": "dev-sf3",
         "pomm-project/model-manager": "~2.0@dev",
         "pomm-project/pomm-symfony-bridge": "~2.0@dev"
     },
@@ -26,13 +26,20 @@
         "psr-0": {
             "": "src/",
             "SymfonyStandard": "app/"
-        }
+        },
+        "classmap": [ "app/AppKernel.php" ]
     },
     "autoload-dev": {
         "files": ["tests/Features/bootstrap/FeatureContext.php"]
     },
     "config": {
         "bin-dir": "bin"
+    },
+    "extra": {
+        "symfony-app-dir": "app",
+        "symfony-bin-dir": "bin",
+        "symfony-web-dir": "web",
+        "symfony-var-dir": "var"
     },
     "scripts": {
         "post-root-package-install": [
