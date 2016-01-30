@@ -1,0 +1,1 @@
+../vendor/pomm-project/cli/bin/pomm.php
