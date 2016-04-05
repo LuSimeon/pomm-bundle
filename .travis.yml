@@ -29,7 +29,7 @@ before_install:
 
     - export DISPLAY=:99.0
     - Xvfb $DISPLAY -extension RANDR &> /dev/null &
-    - wget -c http://selenium-release.storage.googleapis.com/2.45/selenium-server-standalone-2.45.0.jar -O selenium.jar
+    - wget -c http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.0.jar -O selenium.jar
     - java -jar selenium.jar &> /dev/null &
 
     - php -S localhost:8080 -t web &> /dev/null &
